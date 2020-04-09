@@ -6,7 +6,5 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 from .UserModel import UserModel, UserSchema
-from .TransactionModel import TransactionModel, TransactionSchema
-from .SessionModel import SessionModel, SessionSchema
-from .RequestModel import RequestModel, RequestSchema
-from .AccountModel import AccountModel, AccountSchema
+from .Art import  ArtModel,ArtSchema
+from .Food import FoodModel,FoodSchema

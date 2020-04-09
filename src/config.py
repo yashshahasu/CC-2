@@ -10,7 +10,7 @@ class Development(object):
     TESTING = False
     JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
     # Change the name of the database uri to your db uri
-    SQLALCHEMY_DATABASE_URI = "postgresql://owais@localhost/sbs"
+    SQLALCHEMY_DATABASE_URI = "postgresql://postgres:2610@localhost/cc"
 
 class Production(object):
     """
