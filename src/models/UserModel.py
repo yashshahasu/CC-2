@@ -45,6 +45,9 @@ class UserModel(db.Model):
       setattr(self, key, item)
     self.modified_at = datetime.datetime.utcnow()
     db.session.commit()
+  
+  def getcheck(username):
+    return UserModel.query.filter_by(username=username).first()
 
   def delete(self):
     db.session.delete(self)
@@ -65,5 +68,6 @@ class UserSchema(Schema):
   password = fields.Str(required=True)
   username = fields.Str(required=True)
   phone_no = fields.Str(required=True)
+  address=fields.Str(required=True)
   food=fields.Nested(FoodSchema,many=True)
   art=fields.Nested(ArtSchema,many=True)
