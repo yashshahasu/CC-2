@@ -3,6 +3,7 @@
 from flask import Flask
 from .models import db
 from .config import app_config
+from .views.LoginView import login_api as login_blueprint
 
 def create_app(env_name):
   """
@@ -14,6 +15,7 @@ def create_app(env_name):
 
   app.config.from_object(app_config[env_name])
   db.init_app(app)
+  app.register_blueprint(login_blueprint,url_prefix="/login")
 
   @app.route('/', methods=['GET'])
   def index():
