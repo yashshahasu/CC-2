@@ -49,6 +49,9 @@ class UserModel(db.Model):
   def getcheck(username):
     return UserModel.query.filter_by(username=username).first()
 
+  def getuser(username,password):
+    return UserModel.query.filter_by(username=username,password=password).first()
+
   def delete(self):
     db.session.delete(self)
     db.session.commit()
@@ -71,3 +74,4 @@ class UserSchema(Schema):
   address=fields.Str(required=True)
   food=fields.Nested(FoodSchema,many=True)
   art=fields.Nested(ArtSchema,many=True)
+  
